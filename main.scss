@@ -1,0 +1,99 @@
+body {
+    font-family: "Arial", sans-serif;
+    padding: 40px;
+    background-color: #f1f1f1;
+}
+
+// Кнопка
+.btn {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(25, 147, 25);
+    padding: 13px 20px;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(76, 198, 76);
+    }
+    &:active {
+        background-color: rgb(36, 87, 36);
+        color: white;
+    }
+}
+
+
+// Макет
+.card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    .rating {
+        display: flex;
+        .rating__star:not(:last-child) {
+            padding-right: 6px;
+        }
+    }
+    .card__img {
+        display: flex;
+        width: 100%;
+        height: 217px;
+        object-fit: cover;
+    }
+    .card__body {
+        padding: 43px 36px;
+    }
+    .card__price-rating {
+        margin-bottom: 20px;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .card__price {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .card__rating {
+        margin-left: 20px;
+    }
+
+    .card__title {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .card__location {
+        display: block;
+        margin-bottom: 18px;
+        font-size: 16px;
+        color: #999;
+    }
+}
+
+// Сетка
+.cards-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    .card_promo {
+        position: relative;
+        outline: 5px solid #FFB800;
+    }
+    .card_promo::before {
+        content: 'АКЦИЯ';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        background-color: #FFB800;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 10px 30px;
+        color: white;
+        font-weight: 700;
+    }
+}
